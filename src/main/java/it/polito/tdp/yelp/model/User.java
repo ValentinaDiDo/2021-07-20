@@ -1,6 +1,6 @@
 package it.polito.tdp.yelp.model;
 
-public class User {
+public class User implements Comparable<User>{
 	private String userId;
 	private int votesFunny;
 	private int votesUseful;
@@ -105,6 +105,12 @@ public class User {
 	@Override
 	public String toString() {
 		return String.format("%s (%s)",  name, userId);
+	}
+
+	@Override
+	public int compareTo(User o) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(o.name);
 	}
 	
 }
